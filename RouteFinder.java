@@ -22,9 +22,9 @@ public class RouteFinder implements IRouteFinder {
 
         try {
 
-            URLConnection deez = new URL(IRouteFinder.TRANSIT_WEB_URL).openConnection();
-            deez.setRequestProperty("user-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
-            BufferedReader in = new BufferedReader(new InputStreamReader(deez.getInputStream()));
+            URLConnection transurl = new URL(IRouteFinder.TRANSIT_WEB_URL).openConnection();
+            transurl.setRequestProperty("user-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
+            BufferedReader in = new BufferedReader(new InputStreamReader(transurl.getInputStream()));
             
             String inputLine = "";
 
@@ -68,9 +68,9 @@ public class RouteFinder implements IRouteFinder {
 
             try {
 
-                URLConnection deez = new URL(destinationBusesMap.get(s)).openConnection();
-                deez.setRequestProperty("user-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
-                BufferedReader in = new BufferedReader(new InputStreamReader(deez.getInputStream()));
+                URLConnection transurl = new URL(destinationBusesMap.get(s)).openConnection();
+                transurl.setRequestProperty("user-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
+                BufferedReader in = new BufferedReader(new InputStreamReader(transurl.getInputStream()));
                 String inputLine = "";
 
                 String text = "";
